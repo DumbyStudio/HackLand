@@ -1,0 +1,77 @@
+body
+{
+    --main-bg-color: #000;
+    --attenuated-main-bg-color: #0007;
+    --main-txt-color: #0F0;
+    color: var(--main-bg-color);
+}
+
+/*
+    | Style du Header de la page d'Accueil |
+*/
+
+header
+{
+    background-color: var(--attenuated-main-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-logo
+{
+    width: 40px;
+}
+
+.header-titles-container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.header-buttons-container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.page-button
+{
+    background-color: var(--main-txt-color);
+    color: var(--main-bg-color);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/*
+    | Style du Footer de la page d'Accueil |
+*/
+
+footer
+{
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.footer-logo
+{
+    width: 40px;
+}
+
+.footer-links-container
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.footer-link
+{
+    color: var(--attenued-main-txt-color);
+}

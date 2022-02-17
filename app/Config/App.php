@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/1to10v2/public/';
+    public $baseURL = 'http://localhost/HackLand/public/';
 
     /**
      * --------------------------------------------------------------------------

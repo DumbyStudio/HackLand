@@ -4,8 +4,8 @@
 	<head>
 		
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="<?php echo base_url('css/Wasteland.css');?>" />
-		<title>Project Wasteland</title>
+		<link rel="stylesheet" href="<?php echo base_url('css/HackLandStyle.css'); ?>" />
+		<title>HackLand</title>
 		
 	</head>
 	
@@ -14,10 +14,10 @@
 		<?php \App\Controllers\Scrap::open("header"); ?>
 
 		<div id='Main'>
-			Project Wasteland
+			Bienvenue sur HackLand
 		</div>
 		
-		<?php \App\Controller\Scrap::open("footer"); ?>
+		<?php \App\Controllers\Scrap::open("footer"); ?>
 		
 	</body>
 	
