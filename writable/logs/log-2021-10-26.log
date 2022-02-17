@@ -1,0 +1,38 @@
+CRITICAL - 2021-10-26 12:48:00 --> Undefined index: profil
+#0 C:\wamp64\www\1to10v2\app\Controllers\Home.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\1...', 125, Array)
+#1 C:\wamp64\www\1to10v2\app\Controllers\Home.php(88): App\Controllers\Home::redirection('profil', 'none', false, Array)
+#2 C:\wamp64\www\1to10v2\system\CodeIgniter.php(802): App\Controllers\Home->index()
+#3 C:\wamp64\www\1to10v2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\wamp64\www\1to10v2\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\wamp64\www\1to10v2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-10-26 12:48:30 --> include(): http:// wrapper is disabled in the server configuration by allow_url_include=0
+#0 C:\wamp64\www\1to10v2\app\Views\ProfilViews\Profil.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(): http...', 'C:\\wamp64\\www\\1...', 14, Array)
+#1 C:\wamp64\www\1to10v2\app\Views\ProfilViews\Profil.php(14): include()
+#2 C:\wamp64\www\1to10v2\system\View\View.php(214): include('C:\\wamp64\\www\\1...')
+#3 C:\wamp64\www\1to10v2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\wamp64\www\1to10v2\system\Common.php(1092): CodeIgniter\View\View->render('ProfilViews/Pro...', Array, true)
+#5 C:\wamp64\www\1to10v2\app\Controllers\CompteControllers\Profil.php(9): view('ProfilViews/Pro...')
+#6 C:\wamp64\www\1to10v2\app\Controllers\CompteControllers\Profil.php(24): App\Controllers\CompteControllers\Profil::open()
+#7 C:\wamp64\www\1to10v2\app\Controllers\Home.php(127): App\Controllers\CompteControllers\Profil::index('none', false, Array)
+#8 C:\wamp64\www\1to10v2\app\Controllers\Home.php(90): App\Controllers\Home::redirection('profil', 'none', false, Array)
+#9 C:\wamp64\www\1to10v2\system\CodeIgniter.php(802): App\Controllers\Home->index()
+#10 C:\wamp64\www\1to10v2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\wamp64\www\1to10v2\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\wamp64\www\1to10v2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2021-10-26 12:49:05 --> include(fonctionsPhp/getCreations.php): failed to open stream: No such file or directory
+#0 C:\wamp64\www\1to10v2\app\Views\ProfilViews\Profil.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(fonctio...', 'C:\\wamp64\\www\\1...', 23, Array)
+#1 C:\wamp64\www\1to10v2\app\Views\ProfilViews\Profil.php(23): include()
+#2 C:\wamp64\www\1to10v2\system\View\View.php(214): include('C:\\wamp64\\www\\1...')
+#3 C:\wamp64\www\1to10v2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\wamp64\www\1to10v2\system\Common.php(1092): CodeIgniter\View\View->render('ProfilViews/Pro...', Array, true)
+#5 C:\wamp64\www\1to10v2\app\Controllers\CompteControllers\Profil.php(9): view('ProfilViews/Pro...')
+#6 C:\wamp64\www\1to10v2\app\Controllers\CompteControllers\Profil.php(24): App\Controllers\CompteControllers\Profil::open()
+#7 C:\wamp64\www\1to10v2\app\Controllers\Home.php(127): App\Controllers\CompteControllers\Profil::index('none', false, Array)
+#8 C:\wamp64\www\1to10v2\app\Controllers\Home.php(90): App\Controllers\Home::redirection('profil', 'none', false, Array)
+#9 C:\wamp64\www\1to10v2\system\CodeIgniter.php(802): App\Controllers\Home->index()
+#10 C:\wamp64\www\1to10v2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\wamp64\www\1to10v2\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\wamp64\www\1to10v2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
