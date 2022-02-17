@@ -37,6 +37,7 @@ header
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
+    width: 20%;
 }
 
 .page-button
@@ -44,7 +45,8 @@ header
     background-color: var(--main-txt-color);
     color: var(--main-bg-color);
     border-radius: 10px;
-    margin: 20px;
+    padding: 10px;
+    margin: 0px 20px;
 }
 
 /*
@@ -53,10 +55,11 @@ header
 
 footer
 {
-    background-color: var(--main-bg-color);
+    background-color: var(--attenuated-main-bg-color);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: start;
 }
 
 .footer-logo
@@ -74,4 +77,6 @@ footer
 .footer-link
 {
     color: var(--attenued-main-txt-color);
+    padding: 10px;
+    margin: 0px 20px;
 }
