@@ -4,7 +4,7 @@
 	<head>
 		
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="<?php echo base_url('css/HackLandStyle.css'); ?>" />
+		<link rel="stylesheet" href="<?php echo base_url('css/HackLandHomeStyle.css'); ?>" />
 		<title>HackLand</title>
 		
 	</head>

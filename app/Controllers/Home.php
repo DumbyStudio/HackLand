@@ -2,13 +2,6 @@
 
 namespace App\Controllers;
 
-use \App\Controllers\CompteControllers\Connexion;
-use \App\Controllers\CompteControllers\Identifiants;
-use \App\Controllers\CompteControllers\Inscription;
-use \App\Controllers\CompteControllers\Verification;
-
-use \App\Controllers\CompteControllers\Profil;
-
 class Home extends BaseController
 {
     public static function index()
@@ -41,22 +34,6 @@ class Home extends BaseController
             $_DATA['scrap'] = htmlspecialchar($_GET['scrap']);
         }
 
-        $_DATA['identifiants_verification'] = array();
-        if(isset($_GET['code']) && isset($_GET['email']))
-        {
-            $page = 'verification';
-            $action = 'verification';
-            $_DATA['identifiants_verification']['email'] = htmlspecialchars($_GET['email']);
-            $_DATA['identifiants_verification']['code'] = htmlspecialchars($_GET['code']);
-        }
-        if(isset($_POST['Code']) && isset($_POST['Email']))
-        {
-            $page = 'verification';
-            $action = 'verification';
-            $_DATA['identifiants_verification']['email'] = htmlspecialchars($_POST['Email']);
-            $_DATA['identifiants_verification']['code'] = htmlspecialchars($_POST['Code']);
-        }
-
         $_DATA['identifiants_connexion'] = array();
         if(isset($_POST['connect_Pseudo']) && isset($_POST['connect_Mdp']))
         {
@@ -77,15 +54,7 @@ class Home extends BaseController
             $_DATA['identifiants_inscription']['password2'] = htmlspecialchars($_POST['inscri_Verif']);
         }
 
-        $_DATA['profil'] = array();
-
-        $_DATA['identifiants_recuperation'] = array();
-        if(isset($_POST['recup_Mail']))
-        {
-            $page = 'getLogins';
-            $action = 'getLogins';
-            $_DATA['identifiants_recuperation']['email'] = htmlspecialchars($_POST['recup_Mail']);
-        }
+        $_DATA['manager'] = array();
 
         if(!isset($_COOKIE['ticket']))
         {
@@ -117,7 +86,7 @@ class Home extends BaseController
             }
         }
 
-        Home::redirection($page, $action, $isAjax, $_DATA);
+        self::redirection($page, $action, $isAjax, $_DATA);
     }
 
     private static function redirection($page, $action, $isAjax, $_DATA)
@@ -134,30 +103,13 @@ class Home extends BaseController
             case 'connection' :
                 Connexion::index($action, $isAjax, $_DATA['identifiants_connexion']);
                 break;
-            case 'recupereIdentifiants' :
-            case 'getLogins' :
-                Identifiants::index($action, $isAjax, $_DATA['identifiants_recuperation']);
-                break;
             case 'inscription' :
             case 'register' :
                 Inscription::index($action, $isAjax, $_DATA['identifiants_inscription']);
                 break;
-            case 'verification' :
-                Verification::index($action, $isAjax, $_DATA['identifiants_verification']);
-                break;
-            case 'creator' :
-                Creator::index($action, $isAjax, $_DATA['creator_infos']); //TODO controlleur avec redirection vers les différents creators et le menu de creator
-                break;
-            case 'pageMJ' :
-            case 'gameMasterPanel' :
-                GameMasterPanel::index($action, $isAjax, $_DATA['game_mj_infos']); //TODO redirection vers la page pour créer une partie
-                break;
-            case 'rejoindre' :
-            case 'jouer' :
-                PlayerPanel::index($action, $isAjax, $_DATA['game_joueur_infos']); //TODO controlleur avec redirection vers les pages pour joindre une partie / jouer une partie
-                break;
-            case 'profil' :
-                Profil::index($action, $isAjax, $_DATA['profil']); //TODO action de désabonnement et suppression d'objets
+            case 'jeu' :
+            case 'manager' :
+                Manager::index($action, $isAjax, $_DATA['manager']);
                 break;
             case 'accueil' :
             case 'index' :

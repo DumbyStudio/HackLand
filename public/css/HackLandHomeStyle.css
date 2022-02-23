@@ -1,0 +1,87 @@
+body
+{
+    --main-bg-color: #000;
+    --attenuated-main-bg-color: #0007;
+    --main-txt-color: #0F0;
+    color: var(--main-bg-color);
+}
+
+/*
+    | Style du Header de la page d'Accueil |
+*/
+
+header
+{
+    background-color: var(--attenuated-main-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-logo-container, .header-buttons-container
+{
+    width: 20%;
+}
+
+.header-logo
+{
+    width: 50%;
+}
+
+.header-titles-container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.header-buttons-container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.header-button
+{
+    background-color: var(--main-txt-color);
+    color: var(--main-bg-color);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px 20px;
+    text-decoration: none;
+}
+
+/*
+    | Style du Footer de la page d'Accueil |
+*/
+
+footer
+{
+    background-color: var(--attenuated-main-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.footer-logo
+{
+    width: 40px;
+}
+
+.footer-links-container
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.footer-link
+{
+    color: var(--attenued-main-txt-color);
+    padding: 10px;
+    margin: 0px 20px;
+}

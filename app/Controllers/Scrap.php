@@ -12,11 +12,13 @@ class Scrap extends BaseController
         switch($scrap)
         {
             case 'header' :
-                Scrap::header();
+                self::header();
                 break;
             case 'footer' :
-                Scrap::footer();
+                self::footer();
                 break;
+            case 'taskBar' :
+                self::taskBar();
             default :
                 echo "<span style='color:red;background-color:black;'>ERREUR</span>";
                 break;
@@ -31,6 +33,11 @@ class Scrap extends BaseController
     private static function footer()
     {
         echo view("Scraps/footer");
+    }
+
+    private static function taskBar()
+    {
+        echo view("VirtualMachine/Scraps/taskBar");
     }
 
 }

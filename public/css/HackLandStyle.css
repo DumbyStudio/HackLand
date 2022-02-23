@@ -7,76 +7,69 @@ body
 }
 
 /*
-    | Style du Header de la page d'Accueil |
-*/
-
-header
-{
-    background-color: var(--attenuated-main-bg-color);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.header-logo
-{
-    width: 40px;
-}
-
-.header-titles-container
-{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.header-buttons-container
-{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    width: 20%;
-}
-
-.page-button
-{
-    background-color: var(--main-txt-color);
-    color: var(--main-bg-color);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0px 20px;
-}
-
-/*
     | Style du Footer de la page d'Accueil |
 */
 
 footer
 {
     background-color: var(--attenuated-main-bg-color);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 8vh;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.footer-logo
-{
-    width: 40px;
-}
-
-.footer-links-container
+.taskbar-tasks
 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 
-.footer-link
+.taskbar-task
 {
-    color: var(--attenued-main-txt-color);
-    padding: 10px;
-    margin: 0px 20px;
+    padding-top: 1vh;
+    margin: 0.5vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.taskbar-task-logo
+{
+    height: 4vh;
+    padding-bottom: 1vh;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
+}
+
+.taskbar-task-selected
+{
+    border-radius: 5px;
+    background-color: #FFF3;
+}
+
+.taskbar-task-indicator
+{
+    height: 0.5vh;
+    margin: 0.25vh;
+    width: 20%;
+    background-color: #0DD5;
+    border-radius: 5px;
+}
+
+.taskbar-task-selected .taskbar-task-indicator
+{
+    width: 50%;
+}
+
+.taskbar-task:hover
+{
+    border-radius: 5px;
+    background-color: #FFF3;
 }
