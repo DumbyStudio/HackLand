@@ -13,7 +13,16 @@
 	<body>
 
 		<div id='Main'>
-			Machine Virtuelle
+			<div class="application">
+				<div class="application-header">
+					<span class="application-header-index">Mon Intranet</span>
+					<span class="application-header-index">Mon Réseau</span>
+					<span class="application-header-index">Internet</span>
+				</div>
+				<div class="application-body">
+
+				</div>
+			</div>
 		</div>
 		
 		<?php \App\Controllers\Scrap::open("taskBar"); ?>

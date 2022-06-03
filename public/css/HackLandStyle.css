@@ -1,9 +1,57 @@
 body
 {
     --main-bg-color: #000;
-    --attenuated-main-bg-color: #0007;
+    --attenuated-main-bg-color: #222C;
     --main-txt-color: #0F0;
-    color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+
+    background-image: url('../img/wallpaper.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*
+    Style des applications
+*/
+
+.application
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 91vh;
+    background-color: #333;
+}
+
+.application-header
+{
+    background-color: #666;
+    padding: 5px 5px;
+}
+
+.application-header-index
+{
+    color: #BBB;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.application-header-index:hover
+{
+    background-color: #FFF1;
+}
+
+.application-header-index-selected
+{
+    background-color: #FFF2;
+}
+
+.application-body
+{
+    height: 100%;
 }
 
 /*
@@ -16,12 +64,14 @@ footer
     position: fixed;
     bottom: 0px;
     left: 0px;
-    height: 8vh;
     width: 100%;
+    height: 9vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .taskbar-tasks
@@ -59,13 +109,14 @@ footer
     height: 0.5vh;
     margin: 0.25vh;
     width: 20%;
-    background-color: #0DD5;
+    background-color: #DDD9;
     border-radius: 5px;
 }
 
 .taskbar-task-selected .taskbar-task-indicator
 {
     width: 50%;
+    background-color: #0DDD;
 }
 
 .taskbar-task:hover

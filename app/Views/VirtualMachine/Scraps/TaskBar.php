@@ -6,7 +6,14 @@
 
         <div class="taskbar-task">
         
-            <object class="taskbar-task-logo" data="<?php echo base_url('img/logo.svg'); ?>" type="image/svg+xml"></object>
+            <img class="taskbar-task-logo" src="<?php echo base_url('img/logo.png'); ?>" alt="Logo"></img>
+            <span class="taskbar-task-indicator"></span>
+        
+        </div>
+
+        <div class="taskbar-task">
+        
+            <img class="taskbar-task-logo" src="<?php echo base_url('img/navigator.png'); ?>" alt="Navigator"></img>
             <span class="taskbar-task-indicator"></span>
         
         </div>

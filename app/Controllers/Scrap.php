@@ -19,6 +19,7 @@ class Scrap extends BaseController
                 break;
             case 'taskBar' :
                 self::taskBar();
+                break;
             default :
                 echo "<span style='color:red;background-color:black;'>ERREUR</span>";
                 break;

@@ -56,37 +56,34 @@ class Home extends BaseController
 
         $_DATA['manager'] = array();
 
-        if(!isset($_COOKIE['ticket']))
+        if(!self::verifyTicket())
         {
-            $ticket = session_id().microtime().rand(0,9999999999);
-            $ticket = hash('sha512', $ticket);
-            setcookie('ticket', $ticket, time() +  (60 * 20));
-            $_SESSION['ticket'] = $ticket;
+            $page = 'default';
+            $action = 'default';
         }
-        else
-        {
-            if($_COOKIE['ticket'] == $_SESSION['ticket'])
-            {
-                $ticket = session_id().microtime().rand(0,9999999999);
-                $ticket = hash('sha512', $ticket);
-                setcookie('ticket', $ticket, time() +  (60 * 20));
-                $_SESSION['ticket'] = $ticket;
-            }
-            else
-            {
-                $action = 'default';
-                $_SESSION = array();
-                $_COOKIE = array();
-                session_destroy();
-                session_start();
-                $ticket = session_id().microtime().rand(0,9999999999);
-                $ticket = hash('sha512', $ticket);
-                setcookie('ticket', $ticket, time() +  (60 * 20));
-                $_SESSION['ticket'] = $ticket;
-            }
-        }
+        self::setTicket();
 
         self::redirection($page, $action, $isAjax, $_DATA);
+    }
+
+    private static function verifyTicket()
+    {
+        if(isset($_COOKIE['ticket']) && $_COOKIE['ticket'] != $_SESSION['ticket'])
+        {
+            $_SESSION = array();
+            $_COOKIE = array();
+            session_destroy();
+            session_start();
+            return false;
+        }
+        return true;
+    }
+
+    private static function setTicket()
+    {
+        $ticket = hash('sha512', session_id().microtime().rand(0,9999999999));
+        setcookie('ticket', $ticket, ["samesite" => "Lax", "expires" => time() + 60 * 20]);
+        $_SESSION['ticket'] = $ticket;
     }
 
     private static function redirection($page, $action, $isAjax, $_DATA)

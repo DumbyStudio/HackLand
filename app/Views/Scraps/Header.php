@@ -5,7 +5,7 @@
 
     <div class="header-titles-container">
         <h1>HackLand</h1>
-        <h2>La Terre des Hackeurs</h2>
+        <h2>Wesh Wesh Canne à Pêche</h2>
     </div>
 
     <div class="header-buttons-container">
