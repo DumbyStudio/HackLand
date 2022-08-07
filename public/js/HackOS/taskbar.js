@@ -1,4 +1,4 @@
-$(".taskbar-task").click(function() {
+/*$(".taskbar-task").click(function() {
     $(".taskbar-task-selected").removeClass("taskbar-task-selected");
     $(this).parent().addClass("taskbar-task-selected");
 });
@@ -14,4 +14,4 @@ $(document).on( 'click', '.taskbar-task', function () {
 
 var taskOver = false;
 $('.taskbar-task').on('mouseenter', function() {taskHover = $(this);console.log("enter task")});
-$('.taskbar-task').on('mouseleave', function() {taskHover = false;console.log("leave task")});
+$('.taskbar-task').on('mouseleave', function() {taskHover = false;console.log("leave task")});*/

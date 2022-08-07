@@ -31,11 +31,11 @@ class Database extends Config
      * @var array
      */
     public $auth = [
-        'DSN'      => 'mysql:host=localhost;dbname=RpgOnline;charset=utf8',
+        'DSN'      => 'mysql:host=localhost;dbname=hackland;charset=utf8',
         'hostname' => 'localhost',
-        'username' => 'authRpg',
-        'password' => 'k4t2RjNwC4N8t8Bi9Tc5',
-        'database' => 'RpgOnline',
+        'username' => 'basicHacker',
+        'password' => 'Y6r33n$1Im#p',
+        'database' => 'hackland',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -56,11 +56,11 @@ class Database extends Config
      * @var array
      */
     public $admin = [
-        'DSN'      => 'mysql:host=localhost;dbname=RpgOnline;charset=utf8',
+        'DSN'      => 'mysql:host=localhost;dbname=hackland;charset=utf8',
         'hostname' => 'localhost',
-        'username' => 'adminRpg',
-        'password' => 'UzFx5pq4T6xZp7A9Z5t7',
-        'database' => 'RpgOnline',
+        'username' => 'basicHacker',
+        'password' => 'Y6r33n$1Im#p',
+        'database' => 'hackland',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -82,11 +82,11 @@ class Database extends Config
      * @var array
      */
     public $tests = [
-        'DSN'      => 'mysql:host=localhost;dbname=RpgOnline;charset=utf8',
+        'DSN'      => 'mysql:host=localhost;dbname=hackland;charset=utf8',
         'hostname' => 'localhost',
-        'username' => 'authRpg',
-        'password' => 'k4t2RjNwC4N8t8Bi9Tc5',
-        'database' => 'RpgOnline',
+        'username' => 'basicHacker',
+        'password' => 'Y6r33n$1Im#p',
+        'database' => 'hackland',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

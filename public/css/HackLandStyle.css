@@ -30,6 +30,9 @@ body
 {
     background-color: #666;
     padding: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
 }
 
 .application-header-index
@@ -37,6 +40,10 @@ body
     color: #BBB;
     padding: 5px 10px;
     cursor: pointer;
+}
+
+.application-header-index:last-of-type {
+    margin-left: auto;
 }
 
 .application-header-index:hover

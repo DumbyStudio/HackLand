@@ -10,7 +10,7 @@ class ConnexionModel
     public static function getUserPassword($login)
     {
         $db = db_connect();
-        $req = 'SELECT UserHash FROM RpgUser WHERE UserName = ? OR UserMail = ? LIMIT 1;';
+        $req = 'SELECT motDePasse FROM User WHERE nom = ? OR email = ? LIMIT 1;';
         $results = $db -> query($req, array( $login, $login ));
         $userHash = $results -> getResult()[0] -> UserHash;
         return $userHash;

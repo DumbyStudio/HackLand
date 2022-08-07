@@ -8,7 +8,7 @@ class CompteModel
     {
         $db = db_connect();
         
-        $req = 'SELECT UserName FROM RpgUser WHERE UserName = ? OR UserMail = ? LIMIT 1 ;';
+        $req = 'SELECT nom FROM User WHERE nom = ? OR email = ? LIMIT 1 ;';
         $results = $db -> query($req, array( $login, $login ));
 
         $pseudo = $results -> getResult()[0] -> UserName;
@@ -21,7 +21,7 @@ class CompteModel
         $id = 0;
         $db = db_connect();
 
-        $req = 'SELECT UserID FROM RpgUser WHERE UserName = ? OR UserMail = ? LIMIT 1;';
+        $req = 'SELECT ID FROM User WHERE nom = ? OR email = ? LIMIT 1;';
         $results = $db -> query($req, array( $login, $login ));
         
         $id = $results -> getResult()[0] -> UserID;
@@ -45,7 +45,7 @@ class CompteModel
     {
         $db = db_connect();
 
-        $req = 'SELECT EXISTS (SELECT * FROM RpgUser WHERE UserName = ? OR UserMail = ?) AS "exists";';
+        $req = 'SELECT EXISTS (SELECT * FROM User WHERE nom = ? OR email = ?) AS "exists";';
         $results = $db -> query($req, [$login, $login]);
 
         $exists = $results -> getResult()[0] -> exists;

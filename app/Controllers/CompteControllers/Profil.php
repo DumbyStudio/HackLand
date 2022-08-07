@@ -14,19 +14,33 @@ class Profil extends \App\Controllers\BaseController
 
     public static function index($action, $isAjax, $data)
     {
+        $result = "ERROR NO RETURN VALUE !";
         switch($action)
         {
+            case 'getUserInfos' :
+                $result = Profil::getUserInfos();
+                break;
             case 'delete' :
-                Profil::delete($data['delete'], $isAjax);
+                $return = Profil::delete($data['delete'], $isAjax);
                 break;
             case 'unsub' :
-                Profil::unsub($data['unsub'], $isAjax);
+                $return = Profil::unsub($data['unsub'], $isAjax);
                 break;
             case 'profil' :
             default :
-                Profil::open();
+                $return = Profil::open();
                 break;
         }
+        return $result;
+    }
+
+    private static function getUserInfos()
+    {
+        $arr = array('id' => 19868754, 'firstName' => 'Marcel', 'lastName' => 'Martin');    
+
+        //add the header here
+        header('Content-Type: application/json');
+        echo json_encode( $arr );
     }
 
     private static function delete($deleteData, $isAjax)

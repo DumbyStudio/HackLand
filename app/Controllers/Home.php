@@ -2,6 +2,15 @@
 
 namespace App\Controllers;
 
+use \App\Controllers\CompteControllers\Connexion;
+use \App\Controllers\CompteControllers\Identifiants;
+use \App\Controllers\CompteControllers\Inscription;
+use \App\Controllers\CompteControllers\Verification;
+
+use \App\Controllers\CompteControllers\Profil;
+
+use \App\Controllers\Applications;
+
 class Home extends BaseController
 {
     public static function index()
@@ -61,9 +70,19 @@ class Home extends BaseController
             $page = 'default';
             $action = 'default';
         }
-        self::setTicket();
 
-        self::redirection($page, $action, $isAjax, $_DATA);
+        $_DATA['user'] = array();
+
+        $_DATA['software'] = array();
+        if(isset($_GET['softwareName']))
+        {
+            $_DATA['software']['name'] = $_GET['softwareName'];
+        }
+
+        if(!$isAjax)
+            self::setTicket();
+
+        return self::redirection($page, $action, $isAjax, $_DATA);
     }
 
     private static function verifyTicket()
@@ -88,31 +107,39 @@ class Home extends BaseController
 
     private static function redirection($page, $action, $isAjax, $_DATA)
     {
+        $result = "ERROR NO RETURN VALUE";
         switch($page)
         {
             case 'scrap' :
                 if($isAjax)
-                    Scrap::openAjax($_DATA['scrap']['name'], $_DATA['scrap']['infos']);
+                    $result = Scrap::openAjax($_DATA['scrap']['name'], $_DATA['scrap']['infos']);
                 else
-                    Scrap::open($_DATA['scrap']);
+                    $result = Scrap::open($_DATA['scrap']);
                 break;
             case 'connexion' :
             case 'connection' :
-                Connexion::index($action, $isAjax, $_DATA['identifiants_connexion']);
+                $result = Connexion::index($action, $isAjax, $_DATA['identifiants_connexion']);
                 break;
             case 'inscription' :
             case 'register' :
-                Inscription::index($action, $isAjax, $_DATA['identifiants_inscription']);
+                $result = Inscription::index($action, $isAjax, $_DATA['identifiants_inscription']);
                 break;
             case 'jeu' :
             case 'manager' :
-                Manager::index($action, $isAjax, $_DATA['manager']);
+                $result = Manager::index($action, $isAjax, $_DATA['manager']);
+                break;
+            case 'user' :
+                $result = Profil::index($action, $isAjax, $_DATA['user']);
+                break;
+            case 'softwares' :
+                $result = Applications::index($action, $isAjax, $_DATA['software']);
                 break;
             case 'accueil' :
             case 'index' :
             default :
-                Accueil::index($action, $isAjax);
+                $result = Accueil::index($action, $isAjax);
                 break;
         }
+        return $result;
     }
 }

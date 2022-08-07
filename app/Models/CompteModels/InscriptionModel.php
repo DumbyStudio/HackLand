@@ -8,7 +8,7 @@ class InscriptionModel
     {
         $db = db_connect();
 
-        $req = 'SELECT EXISTS (SELECT * FROM RpgUser WHERE UserName = :pseudo: OR UserMail = :email:) AS "isExists";';
+        $req = 'SELECT EXISTS (SELECT * FROM User WHERE nom = :pseudo: OR email = :email:) AS "isExists";';
         $results = $db -> query($req, array(
             'pseudo' => $Pseudo,
             'email' => $Mail
@@ -25,7 +25,7 @@ class InscriptionModel
 
         $Hash = password_hash( $identifiants['password'], PASSWORD_BCRYPT );
 
-        $req = 'INSERT INTO RpgUser (UserName, UserMail, UserHash) VALUES ( :pseudo:, :email:, :pass: );';
+        $req = 'INSERT INTO User (nom, email, motDePasse) VALUES ( :pseudo:, :email:, :pass: );';
         $db -> query($req, array(
             'pseudo' => $identifiants['login'],
             'email' => $identifiants['email'],
